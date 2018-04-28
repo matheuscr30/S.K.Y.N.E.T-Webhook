@@ -7,7 +7,7 @@ module.exports.conversation = function (application, req, res) {
             application.controllers.funcs.jokes(application, req, res);
             break;
         case "Horas":
-            application.controllers.funcs.time(application, req, res);
+            application.controllers.funcs.hours(application, req, res);
             break;
         case "Tempo":
 
