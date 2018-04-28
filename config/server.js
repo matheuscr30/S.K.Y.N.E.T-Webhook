@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
-consign()
+consign({cwd: process.cwd()})
 	.include('app/routes')
 	.then('app/controllers')
 	.into(app);
