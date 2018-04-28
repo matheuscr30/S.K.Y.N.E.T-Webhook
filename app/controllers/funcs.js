@@ -1,3 +1,17 @@
+
+
+module.exports.hours = function () {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+
+    let response = "A hora atual é " + hours + " horas e " + minutes + " minutos";
+
+    res.json({
+        'fulfillmentText' : response
+    });
+};
+
 module.exports.jokes = function (application, req, res) {
     let jokesList = [
         "O que o tomate foi fazer no banco? . Tirar um extrato",

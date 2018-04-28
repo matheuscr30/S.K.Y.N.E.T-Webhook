@@ -6,6 +6,12 @@ module.exports.conversation = function (application, req, res) {
         case "Piadas":
             application.controllers.funcs.jokes(application, req, res);
             break;
+        case "Horas":
+            application.controllers.funcs.time(application, req, res);
+            break;
+        case "Tempo":
+
+            break;
         default:
             break;
     }
