@@ -1,4 +1,48 @@
+const translate = require('google-translate-api');
 const request = require('request');
+const yql = require('yql');
+
+module.exports.previsionWeather = function (application, req, res) {
+    let body = req.body;
+    let location = body['queryResult']['parameters']['location'];
+    let place = "Uberlândia";
+
+    if(location != undefined){
+        if("country" in location) place = location['contry'];
+        else if ("city" in location) place = location['city'];
+        else if ("admin-area" in location) place = location['admin-area'];
+        else if ("subadmin-area" in location) place = location['subadmin-area'];
+    }
+
+    let response = "";
+
+    let query = new yql("select * from weather.forecast where woeid in " +
+            "(select woeid from geo.places(1) where text='" + place + "')");
+
+    query.exec(function (err, data) {
+        if(data.query.results == null) {
+            response = "Me desculpe, Não consegui prever o tempo para esse lugar";
+            return res.json({
+                'fulfillmentText' : response
+            });
+        }
+
+        let far = parseFloat(data.query.results.channel.item.condition.temp);
+        let cels = ((far - 32) / (1.8)).toString().split('.')[0];
+        let text = data.query.results.channel.item.condition.text;
+
+        translate(text, {to: 'pt'}).then(result => {
+            let translation = result.text;
+            response = "Previsão do tempo para " + place + " " + cels + " graus com tempo " + translation;
+
+            res.json({
+                'fulfillmentText' : response
+            });
+        }).catch(err => {
+            console.error(err);
+        });
+    });
+};
 
 module.exports.whatIsIt = function (application, req, res) {
     let body = req.body;

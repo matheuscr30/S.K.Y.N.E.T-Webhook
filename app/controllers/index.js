@@ -16,6 +16,7 @@ module.exports.conversation = function (application, req, res) {
             application.controllers.funcs.whatIsIt(application, req, res);
             break;
         case "Tempo":
+            application.controllers.funcs.previsionWeather(application, req, res);
             break;
         default:
             res.json("Nao Achou");
