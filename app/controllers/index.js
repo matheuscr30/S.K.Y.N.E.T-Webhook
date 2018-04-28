@@ -4,7 +4,7 @@ module.exports.conversation = function (application, req, res) {
 
     switch (intent){
         case "Piadas":
-            application.app.controllers.funcs.jokes(application, req, res);
+            application.controllers.funcs.jokes(application, req, res);
             break;
         default:
             break;

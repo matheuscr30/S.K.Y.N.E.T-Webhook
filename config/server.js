@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign({cwd: process.cwd() + "/app"})
-	.include('controllers')
-	.then('routes')
+	.include('routes')
+	.then('controllers')
 	.into(app);
 
 /* exportar o objeto app */
