@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="db62259c-2f24-4477-9137-61a19c4674dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/controllers/funcs.js" afterPath="$PROJECT_DIR$/app/controllers/funcs.js" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/index.js" afterPath="$PROJECT_DIR$/app/controllers/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,9 +49,15 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/funcs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
+<<<<<<< Updated upstream
               <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#363#2192#0" expanded="false" />
+=======
+              <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+              <folding>
+                <element signature="e#382#2211#0" expanded="false" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -260,12 +265,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524880424382</updated>
+<<<<<<< Updated upstream
       <workItem from="1524880426040" duration="2598000" />
+=======
+      <workItem from="1524880426040" duration="3424000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="2598000" />
+=======
+    <option name="totallyTimeSpent" value="3424000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="7" />
@@ -351,9 +364,15 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/funcs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< Updated upstream
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#363#2192#0" expanded="false" />
+=======
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+          <folding>
+            <element signature="e#382#2211#0" expanded="false" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>

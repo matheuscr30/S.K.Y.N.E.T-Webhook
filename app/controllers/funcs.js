@@ -1,6 +1,4 @@
-
-
-module.exports.hours = function () {
+module.exports.hours = function (application, req, res) {
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
