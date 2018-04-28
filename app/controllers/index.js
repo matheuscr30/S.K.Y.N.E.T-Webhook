@@ -9,10 +9,13 @@ module.exports.conversation = function (application, req, res) {
         case "Horas":
             application.controllers.funcs.hours(application, req, res);
             break;
-        case "Tempo":
-            break;
         case "CaraCoroa":
             application.controllers.funcs.headsOrTails(application, req, res);
+            break;
+        case "OQueE":
+            application.controllers.funcs.whatIsIt(application, req, res);
+            break;
+        case "Tempo":
             break;
         default:
             res.json("Nao Achou");
