@@ -44,17 +44,14 @@ module.exports.playMusic = async function (application, req, res) {
     let rand = Math.floor((Math.random() * global.playMusicResponse.length));
     let result = global.playMusicResponse[rand];
     res.json({
-        'fulfillmentText': result,
-        'fulfillmentMessages': [
-            {
-                "text": {
-                    "text": [result]
-                },
-                "variables": {
-                    "spotifyList": spotifyList
-                }
+        "fulfillmentText": result,
+        "followupEventInput": {
+            "name": "seila",
+            "languageCode": "pt-BR",
+            "parameters": {
+                "spotifyList": spotifyList
             }
-        ]
+        }
     });
 };
 
