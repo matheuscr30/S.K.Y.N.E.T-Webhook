@@ -2,6 +2,8 @@ module.exports = function () {
     global.jokesList = jokesList;
     global.victoryResponses = victoryResponses;
     global.lossResponses = lossResponses;
+    global.spotifyPlaylistGenres = spotifyPlaylistGenres;
+    global.playMusicResponse = playMusicResponse;
 };
 
 let victoryResponses = [
@@ -32,7 +34,7 @@ let jokesList = [
     "O que é um pontinho amarelo na limusine? . É um milhonário",
     "O que é o que é? Dá muitas voltas e não sai do lugar . O relógio",
     "O que uma impressora falou pra outra? . Esse papel é seu ou é impressão minha",
-    "Tenho uma enxada, uma pá e uma foice Quantas ferramentas eu tenho? . Duas porque uma foi se",
+    "Tenho uma enxada, uma pá e uma foice Quantas ferramentas eu tenho? . Duas porque uma foi se embora",
     "Como o Batman abre a garagem? . Ele bate palmas",
     "Nunca desista dos seus sonhos . Se acabou em uma padaria busque em outra",
     "Qual o vinho que não tem álcool? . Ovinho de codorna",
@@ -50,3 +52,19 @@ let jokesList = [
     "Por acaso eu tenho cara de palhaça? . Acho que não",
     "Não fui contratada para fazer piadas . Dá para me deixar em paz?"
 ];
+
+let playMusicResponse = [
+    "Já vou tocar sua música",
+    "Vou colocar a sua música",
+    "Sua música sera colocada em instantes",
+    "Aproveite a sua música",
+    "Aproveite o som",
+    "Aproveite o batidão",
+    "Aproveite a batida"
+];
+
+let spotifyPlaylistGenres = {
+    'pop' : {
+        'spotifyUri' : "spotify:user:spotify:playlist:37i9dQZF1DX0s5kDXi1oC5"
+    }
+};

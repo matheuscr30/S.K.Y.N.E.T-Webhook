@@ -15,6 +15,7 @@
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "google-translate-api": "^2.3.0",
+    "node-spotify-helper": "^0.4.7",
     "request": "^2.85.0",
     "yql": "^1.0.2"
   }
