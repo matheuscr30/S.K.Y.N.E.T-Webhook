@@ -45,6 +45,11 @@ module.exports.playMusic = async function (application, req, res) {
     let result = global.playMusicResponse[rand];
     res.json({
         "fulfillmentText": result,
+        "fulfillmentMessages": [
+            {
+                "spotifyList" : spotifyList
+            }
+        ]
     });
 };
 
