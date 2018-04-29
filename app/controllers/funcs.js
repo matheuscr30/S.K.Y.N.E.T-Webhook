@@ -17,7 +17,8 @@ module.exports.playMusic = async function (application, req, res) {
 
     if (intent === 'TocarMusica.artista') {
         let musicArtist = body['queryResult']['parameters']['music-artist'];
-        spotifyList = await webApi.searchTracks(musicArtist, 10);
+        let playlists = await webApi.searchPlaylists(musicArtist, 10);
+        spotifyList = playlists[0].uri; //Get the This is Artist playlist
     }
     else if (intent === 'TocarMusica.genero') {
         let musicGenre = body['queryResult']['parameters']['music-genre'];
@@ -29,7 +30,7 @@ module.exports.playMusic = async function (application, req, res) {
         else {
             let playlists = await webApi.searchPlaylists(musicGenre, 10);
             let rand = Math.floor((Math.random() * playlists.length));
-            spotifyList = playlists[rand];
+            spotifyList = playlists[rand].uri;
         }
     }
     else if (intent === 'TocarMusica.nome') {
