@@ -45,13 +45,16 @@ module.exports.playMusic = async function (application, req, res) {
     let result = global.playMusicResponse[rand];
     res.json({
         "fulfillmentText": result,
-        "followupEventInput": {
-            "name": "getSpotifyList",
-            "languageCode": "pt-BR",
-            "parameters": {
-                "spotifyList": spotifyList
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        result,
+                        spotifyList
+                    ]
+                }
             }
-        }
+        ],
     });
 };
 
