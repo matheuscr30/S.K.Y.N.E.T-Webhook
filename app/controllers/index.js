@@ -19,7 +19,6 @@ module.exports.conversation = function (application, req, res) {
             application.controllers.funcs.previsionWeather(application, req, res);
             break;
         case "TocarMusica.sim":
-        case "TocarMusica.nao":
         case "TocarMusica.artista":
         case "TocarMusica.genero":
         case "TocarMusica.nome":
