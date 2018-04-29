@@ -49,9 +49,9 @@ module.exports.playMusic = async function (application, req, res) {
             {
                 "text": {
                     "text": [
-                        result,
-                        spotifyList
-                    ]
+                        result
+                    ],
+                    "spotifyList" : spotifyList
                 }
             }
         ],
