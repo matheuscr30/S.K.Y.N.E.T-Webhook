@@ -15,12 +15,12 @@ module.exports.playMusic = async function (application, req, res) {
         isConfigured = true;
     }
 
-    if (intent === 'TocarMusica.artista') {
+    if (intent === 'music.artist') {
         let musicArtist = body['queryResult']['parameters']['music-artist'];
         let playlists = await webApi.searchPlaylists(musicArtist, 10);
         spotifyList = playlists[0].uri; //Get the This is Artist playlist
     }
-    else if (intent === 'TocarMusica.genero') {
+    else if (intent === 'music.genre') {
         let musicGenre = body['queryResult']['parameters']['music-genre'];
         musicGenre = musicGenre.toLowerCase();
 
@@ -33,11 +33,11 @@ module.exports.playMusic = async function (application, req, res) {
             spotifyList = playlists[rand].uri;
         }
     }
-    else if (intent === 'TocarMusica.nome') {
+    else if (intent === 'music.name') {
         let musicName = body['queryResult']['parameters']['music-name'];
         spotifyList = await webApi.searchTracks(musicName, 1);
     }
-    else if (intent === 'TocarMusica.sim') {
+    else if (intent === 'music.yes') {
         //Implement pattern IA
         spotifyList = spotifyPlaylistGenres['pop']['spotifyUri'];
     }
