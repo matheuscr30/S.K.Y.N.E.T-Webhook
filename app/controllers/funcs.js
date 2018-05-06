@@ -59,7 +59,7 @@ module.exports.playMusic = async function (application, req, res) {
     });
 };
 
-module.exports.previsionWeather = function (application, req, res) {
+module.exports.weather = function (application, req, res) {
     let body = req.body;
     let location = body['queryResult']['parameters']['location'];
     let place = "Uberlândia";
@@ -127,7 +127,7 @@ module.exports.whatIsIt = function (application, req, res) {
 
 module.exports.headsOrTails = function (application, req, res) {
     let body = req.body;
-    let optionPerson = body['queryResult']['parameters']['ladoMoeda'];
+    let optionPerson = body['queryResult']['parameters']['Coin'];
     optionPerson = optionPerson.toLowerCase();
 
     let rand = Math.floor((Math.random() * 2));

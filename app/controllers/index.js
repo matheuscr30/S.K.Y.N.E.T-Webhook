@@ -3,20 +3,20 @@ module.exports.conversation = function (application, req, res) {
     let intent = body['queryResult']['intent']['displayName'];
 
     switch (intent){
-        case "Piadas":
+        case "games.jokes":
             application.controllers.funcs.jokes(application, req, res);
             break;
-        case "Horas":
+        case "time.hours":
             application.controllers.funcs.hours(application, req, res);
             break;
-        case "CaraCoroa":
+        case "games.headOrTails":
             application.controllers.funcs.headsOrTails(application, req, res);
             break;
-        case "OQueE":
+        case "information.whatIsIt":
             application.controllers.funcs.whatIsIt(application, req, res);
             break;
-        case "Tempo":
-            application.controllers.funcs.previsionWeather(application, req, res);
+        case "time.wheather":
+            application.controllers.funcs.weather(application, req, res);
             break;
         case "music.yes":
         case "music.artist":
@@ -25,7 +25,9 @@ module.exports.conversation = function (application, req, res) {
             application.controllers.funcs.playMusic(application, req, res);
             break;
         default:
-            res.json("Nao Achou");
+            res.json({
+                'fulfillmentText': 'Não consegui processar o que você quer'
+            });
             break;
     }
 };
