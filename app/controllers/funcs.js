@@ -18,7 +18,14 @@ module.exports.playMusic = async function (application, req, res) {
     if (intent === 'music.artist') {
         let musicArtist = body['queryResult']['parameters']['music-artist'];
         let playlists = await webApi.searchPlaylists(musicArtist, 10);
-        spotifyList = playlists[0].uri; //Get the This is Artist playlist
+
+        for(let i = 0; i < playlists.length; i++){
+            if (!playlists[i].uri.includes('spotify:user:spotify:')){
+                spotifyList = playlists[i].uri
+                break;
+            }
+        }
+        console.log(spotifyList);
     }
     else if (intent === 'music.genre') {
         let musicGenre = body['queryResult']['parameters']['music-genre'];
@@ -28,9 +35,17 @@ module.exports.playMusic = async function (application, req, res) {
             spotifyList = spotifyPlaylistGenres[musicGenre]['spotifyUri'];
         }
         else {
-            let playlists = await webApi.searchPlaylists(musicGenre, 10);
-            let rand = Math.floor((Math.random() * playlists.length));
-            spotifyList = playlists[rand].uri;
+            let playlists = await webApi.searchPlaylists(musicGenre);
+            //let rand = Math.floor((Math.random() * playlists.length));
+            //spotifyList = playlists[rand].uri;
+
+            console.log(playlists);
+            for(let i = 0; i < playlists.length; i++){
+                if (!playlists[i].uri.includes('spotify:user:spotify:')){
+                    spotifyList = playlists[i].uri
+                    break;
+                }
+            }
         }
     }
     else if (intent === 'music.name') {
@@ -39,7 +54,16 @@ module.exports.playMusic = async function (application, req, res) {
     }
     else if (intent === 'music.yes') {
         //Implement pattern IA
-        spotifyList = spotifyPlaylistGenres['pop']['spotifyUri'];
+        let playlists = await webApi.searchPlaylists('pop');
+        //let rand = Math.floor((Math.random() * playlists.length));
+        //spotifyList = playlists[rand].uri;
+
+        for(let i = 0; i < playlists.length; i++){
+            if (!playlists[i].uri.includes('spotify:user:spotify:')){
+                spotifyList = playlists[i].uri
+                break;
+            }
+        }
     }
 
     let rand = Math.floor((Math.random() * global.playMusicResponse.length));

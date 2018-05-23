@@ -1,5 +1,6 @@
 module.exports.conversation = function (application, req, res) {
     let body = req.body;
+    console.log(body);
     let intent = body['queryResult']['intent']['displayName'];
 
     switch (intent){
